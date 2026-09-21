@@ -1,294 +1,679 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap");
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
 :root {
     --roxo: #43132e;
     --roxo-borda: #74324f;
+
     --rosa-card: #dd82bd;
     --rosa-beneficios: #a44685;
     --rosa-botao: #e989c6;
+
     --verde-fundo: #c4ff74;
     --verde-botao: #b8f777;
     --verde-check: #baff78;
+
     --fundo: #f2f2f2;
+
     --container: 1180px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     width: 100%;
     min-height: 100vh;
+
     background: var(--fundo);
     color: #151515;
+
     font-family: "Nunito", Arial, sans-serif;
 }
 
-.pagina { width: 100%; min-height: 100vh; overflow-x: hidden; }
+.pagina {
+    width: 100%;
+    min-height: 100vh;
 
-.container { width: min(92%, var(--container)); margin: 0 auto; }
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topo {
+    width: 100%;
+    background: #ffffff;
+
+    border-bottom: 2px solid var(--roxo-borda);
+}
+
+
+/* Parte de cima do header */
+
+.faixa-clara {
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    padding: 1rem 5%;
+
+    background: #ffffff;
+}
+
+.faixa-clara a {
+    display: flex;
+    align-items: center;
+}
+
+.logo-topo {
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    transition: transform .2s ease;
+}
+
+.logo-topo:hover {
+    transform: scale(1.04);
+}
+
+.faixa-clara h1 {
+    color: var(--roxo);
+
+    font-family: "Baloo 2", Arial, sans-serif;
+
+    font-size: clamp(1.7rem, 3vw, 2.7rem);
+    font-weight: 800;
+
+    letter-spacing: .5px;
+}
+
+
+/* Menu */
+
+.menu {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(1rem, 3vw, 3rem);
+
+    padding: .7rem 5%;
+
+    background: var(--roxo);
+}
+
+.menu a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: .9rem;
+    font-weight: 800;
+
+    transition:
+            color .2s ease,
+            transform .2s ease;
+}
+
+.menu a:hover {
+    color: var(--verde-botao);
+    transform: translateY(-1px);
+}
+
+
+/* Campo de pesquisa */
+
+.busca {
+    width: 180px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    gap: .5rem;
+
+    padding: 0 .8rem;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+    border-radius: 999px;
+}
+
+.busca span {
+    color: var(--roxo);
+
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.busca input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: .8rem;
+}
+
+.busca input::placeholder {
+    color: #777;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
 
 .titulo-secao {
     font-family: "Baloo 2", Arial, sans-serif;
+
     font-size: clamp(2rem, 3.3vw, 3.1rem);
+
     line-height: 1.1;
+
     color: var(--roxo);
+
     font-weight: 800;
 }
 
-.centralizado { text-align: center; }
+.centralizado {
+    text-align: center;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
 
 .botao {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     min-height: 2.3rem;
+
     padding: .45rem 1.5rem;
+
     border-radius: 999px;
+
     text-decoration: none;
-    font: inherit;
+
+    font-family: "Nunito", Arial, sans-serif;
     font-size: clamp(.78rem, 1vw, .95rem);
+
     font-weight: 800;
+
     cursor: pointer;
-    transition: transform .2s ease, filter .2s ease;
+
+    transition:
+            transform .2s ease,
+            filter .2s ease,
+            box-shadow .2s ease;
 }
 
-.botao:hover { transform: translateY(-2px); filter: brightness(.98); }
+.botao:hover {
+    transform: translateY(-2px);
 
-/* INÍCIO */
-.inicio { padding: clamp(2rem, 5vw, 4rem) 0; background: var(--fundo); }
+    filter: brightness(.98);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
+
+/* =========================================================
+   INÍCIO
+========================================================= */
+
+.inicio {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+
+    background: var(--fundo);
+}
+
+
+/* Card Comece seus estudos */
 
 .card-estudos {
     min-height: 15rem;
+
     padding: clamp(1.6rem, 3vw, 2.6rem);
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     gap: 1rem;
+
     text-align: center;
-    background: linear-gradient(135deg, #dcffa4, #bdfb6f);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #dcffa4,
+                    #bdfb6f
+            );
+
     border: 2px solid #789b58;
+
     border-radius: 1.4rem;
+
+    box-shadow:
+            0 5px 18px rgba(67, 19, 46, .08);
 }
 
-.card-estudos h1 {
+.card-estudos h2 {
     font-family: "Baloo 2", Arial, sans-serif;
+
     font-size: clamp(1.8rem, 3vw, 3rem);
+
     line-height: 1;
+
+    color: #151515;
 }
 
 .card-estudos p {
     max-width: 58rem;
+
     font-size: clamp(.75rem, 1vw, .95rem);
+
     line-height: 1.55;
+
     font-weight: 600;
 }
 
-.acoes { display: flex; justify-content: center; flex-wrap: wrap; gap: clamp(1rem, 4vw, 4rem); margin-top: .6rem; }
+
+/* Botões cadastro/login */
+
+.acoes {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: clamp(1rem, 4vw, 4rem);
+
+    margin-top: .6rem;
+}
 
 .botao-rosa {
     min-width: clamp(8rem, 13vw, 11rem);
+
     border: 1px solid #853666;
+
     background: var(--rosa-botao);
+
     color: var(--roxo);
 }
 
+
+/* =========================================================
+   CARD SIMULADOS
+========================================================= */
+
 .card-simulados {
     margin-top: 1.8rem;
+
     min-height: 13rem;
+
     display: grid;
+
     grid-template-columns: 1fr .95fr;
+
     align-items: stretch;
+
     overflow: hidden;
+
     background: var(--rosa-card);
+
     border: 2px solid #8b315f;
+
     border-radius: 1.4rem;
+
+    box-shadow:
+            0 5px 18px rgba(67, 19, 46, .08);
 }
 
 .simulados-texto {
-    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.8rem, 4vw, 4rem);
+    padding:
+            clamp(1.5rem, 3vw, 2.5rem)
+            clamp(1.8rem, 4vw, 4rem);
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: flex-start;
 }
 
 .simulados-texto h2 {
     margin-bottom: 1rem;
+
     font-family: "Baloo 2", Arial, sans-serif;
+
     font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+
     line-height: 1.08;
+
+    color: var(--roxo);
 }
 
-.botao-verde { min-width: min(100%, 18rem); background: var(--verde-botao); color: var(--roxo); }
+.botao-verde {
+    min-width: min(100%, 18rem);
 
-.simulados-imagem { position: relative; min-height: 13rem; }
+    background: var(--verde-botao);
+
+    color: var(--roxo);
+}
+
+
+/* Imagem dos simulados */
+
+.simulados-imagem {
+    position: relative;
+
+    min-height: 13rem;
+
+    overflow: hidden;
+}
 
 .simulados-imagem::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     z-index: 1;
-    background: linear-gradient(90deg, var(--rosa-card) 0%, rgba(221,130,189,.45) 24%, transparent 52%);
+
+    background:
+            linear-gradient(
+                    90deg,
+                    var(--rosa-card) 0%,
+                    rgba(221, 130, 189, .45) 24%,
+                    transparent 52%
+            );
 }
 
-.simulados-imagem img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.simulados-imagem img {
+    width: 100%;
+    height: 100%;
 
-/* VANTAGENS */
-.vantagens { padding: clamp(2.5rem, 5vw, 4.5rem) 0; background: var(--verde-fundo); }
+    display: block;
 
-.vantagens .titulo-secao { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   VANTAGENS
+========================================================= */
+
+.vantagens {
+    padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+
+    background: var(--verde-fundo);
+}
+
+.vantagens .titulo-secao {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
 
 .beneficios {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     background: var(--rosa-beneficios);
+
     border-radius: 1.7rem;
+
     overflow: hidden;
 }
 
 .beneficio {
     min-height: 14rem;
+
     padding: clamp(1.5rem, 3vw, 2.8rem);
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
+    color: #ffffff;
 }
 
-.beneficio + .beneficio { border-left: 2px solid var(--verde-check); }
+.beneficio + .beneficio {
+    border-left: 2px solid var(--verde-check);
+}
 
 .check {
     width: clamp(2.7rem, 4vw, 3.6rem);
+
     aspect-ratio: 1;
+
     margin-bottom: 1rem;
+
     display: grid;
+
     place-items: center;
+
     border: 3px solid var(--verde-check);
+
     border-radius: 50%;
+
     color: var(--verde-check);
+
     font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+
     font-weight: 800;
 }
 
-.beneficio h3 { margin-bottom: .6rem; font-size: clamp(.95rem, 1.4vw, 1.25rem); }
+.beneficio h3 {
+    margin-bottom: .6rem;
+
+    font-size: clamp(.95rem, 1.4vw, 1.25rem);
+}
 
 .beneficio p {
     max-width: 16rem;
+
     font-size: clamp(.72rem, .95vw, .9rem);
+
     line-height: 1.45;
+
     font-weight: 600;
 }
 
-/* QUESTÕES */
-.questoes { background: #f6f6f6; border-top: 2px solid #8a5be1; border-bottom: 2px solid #8a5be1; }
 
-.questoes-conteudo {
-    min-height: clamp(18rem, 32vw, 25rem);
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    align-items: stretch;
+/* =========================================================
+   ÁREAS DOS SIMULADOS
+========================================================= */
+
+.areas {
+    padding: clamp(2.5rem, 5vw, 5rem) 0;
+
+    background: var(--fundo);
 }
-
-.questoes-texto {
-    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem) 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.questoes-texto .titulo-secao { margin-bottom: 1.5rem; color: #151515; }
-
-.questoes-texto p {
-    max-width: 27rem;
-    font-size: clamp(.8rem, 1.15vw, 1rem);
-    line-height: 1.55;
-    font-weight: 700;
-}
-
-.botao-saiba {
-    margin-top: 2rem;
-    min-width: 8rem;
-    background: linear-gradient(90deg, #b3f76d, #c6f98e);
-    color: #3d4b28;
-}
-
-.questoes-imagem { position: relative; overflow: hidden; }
-
-.questoes-imagem::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,.7) 14%, transparent 44%);
-}
-
-.questoes-imagem img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
-
-/* ÁREAS */
-.areas { padding: clamp(2.5rem, 5vw, 5rem) 0; background: var(--fundo); }
 
 .linha-separadora {
     width: min(22rem, 50%);
+
     height: 2px;
-    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+
+    margin:
+            0 auto
+            clamp(2rem, 4vw, 3.5rem);
+
     background: #8fc979;
 }
 
-.areas .titulo-secao { margin-bottom: clamp(1.8rem, 3vw, 2.8rem); }
+.areas .titulo-secao {
+    margin-bottom: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+
+/* Grade */
 
 .grade-areas {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: clamp(1.1rem, 2vw, 2rem);
+
     align-items: stretch;
 }
 
+
+/* Cards */
+
 .card-area {
     min-height: 14rem;
+
     padding: clamp(1rem, 2vw, 1.6rem);
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     border: 2px solid var(--roxo-borda);
+
     border-radius: 1.5rem;
+
     background: #f8f8f8;
+
+    transition:
+            transform .2s ease,
+            box-shadow .2s ease;
 }
+
+.card-area:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+            0 8px 20px rgba(67, 19, 46, .10);
+}
+
+
+/* Ícones */
 
 .icone {
     height: 3.7rem;
+
     display: grid;
+
     place-items: center;
+
     font-size: clamp(2rem, 3vw, 3rem);
+
     color: #555;
+
     filter: grayscale(1);
 }
 
-.card-area h3 { margin: .55rem 0 .7rem; font-size: clamp(.85rem, 1.2vw, 1.05rem); }
+
+/* Título */
+
+.card-area h3 {
+    margin: .55rem 0 .7rem;
+
+    font-size: clamp(.85rem, 1.2vw, 1.05rem);
+
+    color: var(--roxo);
+}
+
+
+/* Descrição */
 
 .card-area p {
     max-width: 14rem;
+
     min-height: 3.3rem;
+
     font-size: clamp(.7rem, .9vw, .85rem);
+
     line-height: 1.4;
+
     font-weight: 600;
 }
 
+
+/* Botão iniciar */
+
 .botao-inicio {
     width: min(100%, 10rem);
+
     margin-top: auto;
-    background: linear-gradient(90deg, #b2f86e, #c8f990);
+
+    background:
+            linear-gradient(
+                    90deg,
+                    #b2f86e,
+                    #c8f990
+            );
+
     color: #334524;
 }
 
-/* ==================================================
-   LÍNGUAS ESTRANGEIRAS - BOTÕES CIRCULARES
-================================================== */
+
+/* =========================================================
+   LÍNGUAS ESTRANGEIRAS
+========================================================= */
 
 .card-idiomas {
     min-height: 14rem;
@@ -296,103 +681,502 @@ body {
 
 .card-idiomas .descricao-idiomas {
     min-height: auto;
+
     margin-bottom: .45rem;
 }
 
+
+/* Seleção dos idiomas */
+
 .selecao-idiomas {
     display: flex;
+
     align-items: flex-start;
+
     justify-content: center;
+
     gap: 1.15rem;
+
     margin: .15rem 0 .9rem;
 }
 
 .opcao-idioma {
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: .3rem;
+
     cursor: pointer;
+
     font-size: .65rem;
+
     font-weight: 800;
+
     color: #4b1838;
 }
 
+
+/* Esconde radio */
+
 .opcao-idioma input {
     position: absolute;
+
     opacity: 0;
+
     pointer-events: none;
 }
+
+
+/* Bolinha */
 
 .opcao-idioma span {
     width: 2.45rem;
     height: 2.45rem;
+
     display: grid;
+
     place-items: center;
+
     border-radius: 50%;
+
     border: 2px solid var(--roxo-borda);
-    background: #fff;
+
+    background: #ffffff;
+
     color: var(--roxo);
+
     font-size: .72rem;
+
     font-weight: 800;
+
     transition: .2s ease;
 }
 
+
+/* Selecionado */
+
 .opcao-idioma input:checked + span {
     background: var(--verde-botao);
+
     border-color: #70964c;
-    box-shadow: 0 0 0 3px rgba(184, 247, 119, .35);
+
+    box-shadow:
+            0 0 0 3px rgba(184, 247, 119, .35);
 }
+
+
+/* Hover */
 
 .opcao-idioma:hover span {
     transform: translateY(-2px);
+
     filter: brightness(.98);
 }
 
 .opcao-idioma small {
     font-size: .65rem;
+
     font-weight: 800;
 }
 
-.faixa-final { height: .65rem; background: #e2ffd0; }
 
-/* RESPONSIVIDADE */
-@media (max-width: 760px) {
-    .container { width: min(92%, 650px); }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-    .card-simulados { grid-template-columns: 1fr; }
+footer {
+    width: 100%;
 
-    .simulados-texto { align-items: center; text-align: center; }
+    display: grid;
 
-    .simulados-imagem { min-height: 11rem; }
+    grid-template-columns: 1.6fr .8fr .7fr;
 
-    .beneficios { grid-template-columns: 1fr; }
+    gap: 2rem;
 
-    .beneficio { min-height: 11rem; }
+    padding:
+            2.5rem
+            5%;
 
-    .beneficio + .beneficio { border-left: none; border-top: 2px solid var(--verde-check); }
+    background: var(--roxo);
 
-    .questoes-conteudo { grid-template-columns: 1fr; }
-
-    .questoes-texto { padding: 2.5rem 0; align-items: center; text-align: center; }
-
-    .questoes-imagem { min-height: 17rem; }
-
-    .grade-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    color: #ffffff;
 }
 
+
+/* Parte esquerda */
+
+.footer-esquerda {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+.logo-footer {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.endereco {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .3rem;
+
+    font-size: .78rem;
+
+    line-height: 1.4;
+}
+
+.endereco strong {
+    font-size: .95rem;
+
+    color: var(--verde-botao);
+}
+
+.endereco b {
+    margin-top: .5rem;
+
+    color: var(--rosa-botao);
+}
+
+
+/* Links */
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .55rem;
+}
+
+.footer-links strong {
+    margin-bottom: .3rem;
+
+    color: var(--verde-botao);
+
+    font-family: "Baloo 2", Arial, sans-serif;
+
+    font-size: 1.2rem;
+}
+
+.footer-links a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: .8rem;
+
+    font-weight: 600;
+
+    transition: color .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--verde-botao);
+}
+
+
+/* Ícones */
+
+.footer-icones {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 1rem;
+}
+
+.footer-icones img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   FAIXA FINAL
+========================================================= */
+
+.faixa-final {
+    height: .65rem;
+
+    background: #e2ffd0;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Header */
+
+    .menu {
+        gap: 1.2rem;
+    }
+
+    .menu a {
+        font-size: .78rem;
+    }
+
+    .busca {
+        width: 140px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-icones {
+        grid-column: 1 / -1;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+        width: min(92%, 650px);
+    }
+
+
+    /* Header */
+
+    .faixa-clara {
+        min-height: 85px;
+
+        gap: .8rem;
+    }
+
+    .logo-topo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .faixa-clara h1 {
+        font-size: 1.6rem;
+    }
+
+    .menu {
+        min-height: auto;
+
+        flex-wrap: wrap;
+
+        gap: .8rem 1.2rem;
+
+        padding: 1rem;
+    }
+
+    .menu a {
+        font-size: .75rem;
+    }
+
+    .busca {
+        width: 160px;
+    }
+
+
+    /* Card simulados */
+
+    .card-simulados {
+        grid-template-columns: 1fr;
+    }
+
+    .simulados-texto {
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .simulados-imagem {
+        min-height: 11rem;
+    }
+
+
+    /* Benefícios */
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficio {
+        min-height: 11rem;
+    }
+
+    .beneficio + .beneficio {
+        border-left: none;
+
+        border-top:
+                2px solid
+                var(--verde-check);
+    }
+
+
+    /* Cards de áreas */
+
+    .grade-areas {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Footer */
+
+    footer {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-esquerda {
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    .endereco {
+        align-items: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-icones {
+        grid-column: auto;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR PEQUENO
+========================================================= */
+
 @media (max-width: 480px) {
-    .inicio { padding: 1.5rem 0 2.5rem; }
 
-    .card-estudos { min-height: auto; }
+    .inicio {
+        padding: 1.5rem 0 2.5rem;
+    }
 
-    .acoes { width: 100%; gap: .8rem; }
 
-    .botao-rosa { flex: 1; min-width: 0; }
+    /* Header */
 
-    .simulados-texto h2 br { display: none; }
+    .faixa-clara {
+        flex-direction: column;
 
-    .grade-areas { grid-template-columns: 1fr; }
+        text-align: center;
 
-    .card-area { min-height: 12rem; }
+        padding: 1rem;
+    }
+
+    .faixa-clara h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .menu a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: .3rem;
+    }
+
+    .busca {
+        width: min(100%, 220px);
+    }
+
+
+    /* Card inicial */
+
+    .card-estudos {
+        min-height: auto;
+
+        padding: 1.5rem 1rem;
+    }
+
+    .acoes {
+        width: 100%;
+
+        gap: .8rem;
+    }
+
+    .botao-rosa {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+
+    /* Simulados */
+
+    .simulados-texto h2 br {
+        display: none;
+    }
+
+    .simulados-texto {
+        padding: 2rem 1rem;
+    }
+
+
+    /* Áreas */
+
+    .grade-areas {
+        grid-template-columns: 1fr;
+    }
+
+    .card-area {
+        min-height: 12rem;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 2rem 1.2rem;
+    }
+
+    .logo-footer {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-icones img {
+        width: 38px;
+        height: 38px;
+    }
+
 }

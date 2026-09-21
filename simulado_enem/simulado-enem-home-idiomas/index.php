@@ -14,9 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $areas = [
     ["icone" => "⚛", "titulo" => "Ciências da Natureza", "descricao" => "45 questões de Química, Física e Biologia.", "tipo" => "normal"],
     ["icone" => "✎", "titulo" => "Linguagens", "descricao" => "45 questões de Língua Portuguesa, Artes e Educação Física.", "tipo" => "normal"],
-    ["icone" => "▣", "titulo" => "Matemática", "descricao" => "45 questões de Matemática.", "tipo" => "normal"],
+    ["icone" => "📐", "titulo" => "Matemática", "descricao" => "45 questões de Matemática.", "tipo" => "normal"],
     ["icone" => "☁", "titulo" => "Ciências Humanas", "descricao" => "45 questões de Geografia, História, Filosofia e Sociologia.", "tipo" => "normal"],
-    ["icone" => "▤", "titulo" => "Línguas Estrangeiras", "descricao" => "Escolha o idioma para iniciar as questões.", "tipo" => "idiomas"],
+    ["icone" => "📖", "titulo" => "Línguas Estrangeiras", "descricao" => "Escolha o idioma para iniciar as questões.", "tipo" => "idiomas"],
     ["icone" => "⚡", "titulo" => "Proposta de Redação", "descricao" => "Propostas de temas para praticar redação.", "tipo" => "normal"]
 ];
 ?>
